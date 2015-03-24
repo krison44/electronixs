@@ -21,13 +21,18 @@ angular
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
-      .state('home', {
+      .state('main', {
         url: '/',
+        abstract: true,
+        templateUrl: 'views/partials/_container.html'
+      })
+      .state('main.home', {
+        url: 'home',
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .state('about', {
-        url: '/about',
+      .state('main.about', {
+        url: 'about',
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       });
